@@ -1,0 +1,10 @@
+.App {
+  background: #f7f7f7;
+  height: 100vh;
+  padding: 2em;
+  font-family: Cormorant Garamond;
+}
+
+.nav{
+  height: 15vh;
+}
