@@ -10,7 +10,7 @@ import { useHistory } from "react-router-dom";
 
 
 //material ui
-import { Grid, Container,Typography,Stepper,Step,StepLabel,Button,Box,TextField } from '@material-ui/core';
+import { Container,Typography,Stepper,Step,StepLabel,Box} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 
@@ -18,15 +18,13 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     mainGrid:{
         background: '#f2f2f2',
-        minHeight: '100vh',
-        padding: '1em'
+        minHeight: '100vh'
     },
     formContainer: {
         padding: '2em',
         background: '#fff',
         borderRadius: '0.5em',
         textAlign:'center',
-        marginTop: '4em'
     },
     txtField:{
         width: '100%'
@@ -86,45 +84,41 @@ const UserForm = props =>{
 
     
     return (
-        <React.Fragment>
-            <Grid className={classes.mainGrid} container spacing={4} className={classes.mainGrid}>
-                <Grid item xs={12} >
-                    <Container maxWidth="md" className={classes.formContainer}>
-                        <Typography variant="h4" gutterBottom>
-                            Create your fashion portfolio
-                        </Typography>
-                        <Box mt="1em">
-                            <Stepper activeStep={activeStep} alternativeLabel>
-                                {steps.map((label, index) => {
-                                    const stepProps = {};
-                                    const labelProps = {};
-                                    return (
-                                        <Step key={label} {...stepProps}>
-                                        <StepLabel {...labelProps}>{label}</StepLabel>
-                                        </Step>
-                                    );
-                                })}
-                            </Stepper>
-                        </Box>
-                        <Box mt="1em">
-                            {
-                                activeStep === 0 &&
-                                <ProfileDetails firstName={values.firstName} lastName={values.lastName} email={values.email} mobile={values.mobile} classes={classes} handleNext={handleNext} handleFieldsChange={handleChange}  />
-                                
-                            }
-                            {
-                                activeStep === 1 && 
-                                <GeneralDetails address={values.address} height={values.height} weight={values.weight} values={values.dob} values={values} classes={classes} handleNext={handleNext} handleBack={handleBack} handleFieldsChange={handleChange} />
-                            }
-                            {
-                                activeStep === 2 && 
-                                <ImagesForm values={values} classes={classes} handleBack={handleBack} handleSubmit={handleSubmit} /> 
-                            }
-                        </Box>                         
-                     </Container>
-                 </Grid>
-             </Grid>
-         </React.Fragment>
+            <Box className={classes.mainGrid} display="flex" justifyContent="center" alignItems="center">
+                <Container maxWidth="md" className={classes.formContainer}>
+                    <Typography variant="h4" gutterBottom>
+                        Create your fashion portfolio
+                    </Typography>
+                    <Box mt="1em">
+                        <Stepper activeStep={activeStep} alternativeLabel>
+                            {steps.map((label, index) => {
+                                const stepProps = {};
+                                const labelProps = {};
+                                return (
+                                    <Step key={label} {...stepProps}>
+                                    <StepLabel {...labelProps}>{label}</StepLabel>
+                                    </Step>
+                                );
+                            })}
+                        </Stepper>
+                    </Box>
+                    <Box mt="1em">
+                        {
+                            activeStep === 0 &&
+                            <ProfileDetails firstName={values.firstName} lastName={values.lastName} email={values.email} mobile={values.mobile} classes={classes} handleNext={handleNext} handleFieldsChange={handleChange}  />
+                            
+                        }
+                        {
+                            activeStep === 1 && 
+                            <GeneralDetails address={values.address} height={values.height} weight={values.weight} dob={values.dob} values={values} classes={classes} handleNext={handleNext} handleBack={handleBack} handleFieldsChange={handleChange} />
+                        }
+                        {
+                            activeStep === 2 && 
+                            <ImagesForm values={values} classes={classes} handleBack={handleBack} handleSubmit={handleSubmit} /> 
+                        }
+                    </Box>                         
+                    </Container>
+            </Box>
     )
 }
 

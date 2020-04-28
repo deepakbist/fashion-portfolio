@@ -31,7 +31,7 @@ export function uploadImage(file,ref){
             storageRef.getDownloadURL().then(function(url){
                 dispatch(addImage({url,ref}))
             }).catch(function(err){
-                console.log("error in downloading url");
+                console.error("error in downloading url",err);
             })
         });
     }
@@ -40,10 +40,10 @@ export function uploadImage(file,ref){
 export function deleteImage(file){
     return (dispatch)=>{
         let storageRef = storage.ref().child(file.ref);
-        storageRef.delete.then(function() {
-            dispatch()
+        storageRef.delete().then(function() {
+            dispatch(removeImage(file))
           }).catch(function(error) {
-            // Uh-oh, an error occurred!
+              console.error("error in deleting file",error);
           });
     }
     
@@ -108,6 +108,7 @@ export function loadPortfolios(){
                 let payload = {};
                 payload.id = doc.id;
                 payload.data = doc.data();
+                payload.data.dob = payload.data.dob ? payload.data.dob.toDate() : '';
                 payload.data.id = doc.id;
                 dispatch(addPortfolio(payload));
             });

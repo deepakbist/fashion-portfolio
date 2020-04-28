@@ -28,7 +28,7 @@ const generalDetailForm = (props)=>{
                 <TextField
                     id="height"
                     label="Height in cm"
-                    value={values.height}defaultValue=""
+                    value={values.height}
                     variant="outlined"
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -41,7 +41,7 @@ const generalDetailForm = (props)=>{
                 <TextField
                     id="weight"
                     label="Weight in kg"
-                    value={values.weight}defaultValue=""
+                    value={values.weight}
                     variant="outlined"
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -55,7 +55,7 @@ const generalDetailForm = (props)=>{
                 <TextField
                     id="address"
                     label="Full address"
-                    value={values.address}defaultValue=""
+                    value={values.address}
                     className={classes.txtField}
                     onChange={handleChange}
                     onBlur={handleBlur}

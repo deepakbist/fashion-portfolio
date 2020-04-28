@@ -8,7 +8,7 @@ import Dropzone from 'react-dropzone-uploader';
 import { Box,Button, Grid } from '@material-ui/core';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
-import { useSelector,useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -32,18 +32,19 @@ export default (props)=>{
     // called every time a file's `status` changes
     const handleChangeStatus = ({ meta, file }, status) => { 
         console.log(status, meta, file) 
-        if(status=='done'){
+        if(status === 'done'){
             let ref = 'images/' + uuidv4();
             setPortfolioImages(portfolioImages.concat({file,ref}));
             dispatch(uploadImage(file,ref));
         }
-        if(status == 'removed'){
+        if(status === 'removed'){
             portfolioImages.map(image=>{
                 if(image.file.name===file.name){
                     dispatch(deleteImage(image))
                 }
+                return null
             })
-            setPortfolioImages(portfolioImages.filter((f)=>f.file.name != file.name));
+            setPortfolioImages(portfolioImages.filter((f)=>f.file.name !== file.name));
 
         }
     }
@@ -74,7 +75,7 @@ export default (props)=>{
     }
 
     return(
-        <React.Fragment>
+        <Box>
             <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
                 <Alert onClose={handleClose} severity="error">
                     Please select at least 3 Images.
@@ -91,10 +92,11 @@ export default (props)=>{
                     inputContent={(files, extra) => (extra.reject ? 'Image, audio and video files only' : 'Drag Portfolio Images or Click to Browse')}
                     inputWithFilesContent = "Add more images"
                     styles={{
+                        dropzone:{overflow:'hidden',minHeight:'9em'},
                         dropzoneReject: { borderColor: 'red', backgroundColor: '#DAA' },
                         inputLabel: (files, extra) => (extra.reject ? { color: 'red' } : {}),
                         preview: {justifyContent:'center'},
-                        inputLabelWithFiles: {alignSelf: 'center'},
+                        inputLabelWithFiles: {alignSelf: 'center',margin:'1em'},
                         previewImage: {maxWidth:'60%',maxHeight: '60vh'}
                     }}
                 />
@@ -109,7 +111,7 @@ export default (props)=>{
                 <Button type="button" variant="contained" onClick={handleNext} className={classes.button} color="primary">Submit</Button>
             </Box>
             
-        </React.Fragment>
+        </Box>
         
     )
 }

@@ -4,7 +4,7 @@ import { Box, Typography,Button, Divider,Grid } from '@material-ui/core';
 import { useSelector,useDispatch } from "react-redux";
 import {updateCurrent} from '../actions';
 
-import { Link,useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 
 export default ()=>{

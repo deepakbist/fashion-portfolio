@@ -1,13 +1,12 @@
 import React from 'react';
 import { Box, Typography,Button, Divider,Grid } from '@material-ui/core';
 
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 
 export default ()=>{
     const currentUser = useSelector(state => state.currentUser);
-    const dispatch = useDispatch();
     const [status,setStatus] = React.useState('images');
     const imageGrid = <Grid container spacing={2}>
         {

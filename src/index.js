@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { store } from './store/index';
 import { Provider } from 'react-redux';
 import './index.css';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
 import UserForm from './components/UserForm';
 import PortFolio from './components/Portfolio';

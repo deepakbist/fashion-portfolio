@@ -49,7 +49,7 @@ function allPortfolios(state=[],action){
           
         case UPDATE_PORTFOLIO:
           return state.map(portfolio=>{
-            if(portfolio.id == action.payload.id){
+            if(portfolio.id === action.payload.id){
               return action.payload
             }
             return portfolio;

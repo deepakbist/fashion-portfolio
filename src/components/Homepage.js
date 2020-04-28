@@ -2,9 +2,8 @@ import React from 'react';
 
 import { Link } from "react-router-dom";
 
-import { useSelector,useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import {loadPortfolios} from '../actions';
-import {db} from '../firebase';
 
 import {Button,Box,Typography} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -30,14 +29,13 @@ const useStyles = makeStyles((theme) => ({
 export default ()=>{
 
     const classes = useStyles();
-    const dispatch = useDispatch()
-    React.useEffect(()=>{  
-        console.log("use effect");
+    const dispatch = useDispatch();
+    React.useEffect(()=>{
         dispatch(loadPortfolios());
     },[])
     return(
         <div>
-            <Box display="flex" className={classes.box} justifyContent="center" justifyContent="center" flexDirection="column" alignItems="center">
+            <Box display="flex" className={classes.box} justifyContent="center" flexDirection="column" alignItems="center">
                 <Typography variant="h3" gutterBottom>
                     Fashion Portfolio
                 </Typography>
