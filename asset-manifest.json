@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/fashion-portfolio/static/css/main.a3f1dba6.chunk.css",
+    "main.js": "/fashion-portfolio/static/js/main.9c91891b.chunk.js",
+    "main.js.map": "/fashion-portfolio/static/js/main.9c91891b.chunk.js.map",
+    "runtime-main.js": "/fashion-portfolio/static/js/runtime-main.eaac91d9.js",
+    "runtime-main.js.map": "/fashion-portfolio/static/js/runtime-main.eaac91d9.js.map",
+    "static/css/2.c301f1a7.chunk.css": "/fashion-portfolio/static/css/2.c301f1a7.chunk.css",
+    "static/js/2.d7e2dacd.chunk.js": "/fashion-portfolio/static/js/2.d7e2dacd.chunk.js",
+    "static/js/2.d7e2dacd.chunk.js.map": "/fashion-portfolio/static/js/2.d7e2dacd.chunk.js.map",
+    "index.html": "/fashion-portfolio/index.html",
+    "precache-manifest.ff2119b6248a2f54bb060b9775adfe21.js": "/fashion-portfolio/precache-manifest.ff2119b6248a2f54bb060b9775adfe21.js",
+    "service-worker.js": "/fashion-portfolio/service-worker.js",
+    "static/css/2.c301f1a7.chunk.css.map": "/fashion-portfolio/static/css/2.c301f1a7.chunk.css.map",
+    "static/css/main.a3f1dba6.chunk.css.map": "/fashion-portfolio/static/css/main.a3f1dba6.chunk.css.map",
+    "static/js/2.d7e2dacd.chunk.js.LICENSE.txt": "/fashion-portfolio/static/js/2.d7e2dacd.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eaac91d9.js",
+    "static/css/2.c301f1a7.chunk.css",
+    "static/js/2.d7e2dacd.chunk.js",
+    "static/css/main.a3f1dba6.chunk.css",
+    "static/js/main.9c91891b.chunk.js"
+  ]
+}
